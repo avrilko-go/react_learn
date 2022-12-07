@@ -89,7 +89,7 @@ function App() {
         <KanbanColumn className="column-todo" title={todoTitle}>
           {showAdd && <KanbanNewCard onSubmit={handleSubmit} />}
           {todoList.map((props) => (
-            <KanbanCard {...props} />
+            <KanbanCard key={props.title} {...props} />
           ))}
         </KanbanColumn>
         <section className="kanban-column column-ongoing">
