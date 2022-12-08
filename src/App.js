@@ -225,7 +225,9 @@ function App() {
           title="进行中"
         >
           {ongoingList.map((props) => (
-            <KanbanCard key={props.title} {...props} />
+            <KanbanCard  onDragStart={() => {
+              setDraggedItem(props);
+            }} key={props.title} {...props} />
           ))}
         </KanbanColumn>
         <KanbanColumn
@@ -240,7 +242,9 @@ function App() {
           title="已完成"
         >
           {doneList.map((props) => (
-            <KanbanCard key={props.title} {...props} />
+            <KanbanCard  onDragStart={() => {
+              setDraggedItem(props);
+            }} key={props.title} {...props} />
           ))}
         </KanbanColumn>
       </KanbanBoard>
