@@ -12,7 +12,7 @@ export default function KanbanNewCard({ onSubmit }) {
 
   const handleKeyDown = (evt) => {
     if (evt.key === 'Enter') {
-      onSubmit(title);
+      onSubmit({ title, status: new Date().toDateString() + new Date().toLocaleTimeString() });
     }
   };
 
